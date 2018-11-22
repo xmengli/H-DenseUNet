@@ -1,0 +1,16 @@
+numpy>=1.9.1
+scipy>=0.14
+six>=1.9.0
+pyyaml
+
+[h5py]
+h5py
+
+[tests]
+pytest
+pytest-pep8
+pytest-xdist
+pytest-cov
+
+[visualize]
+pydot>=1.2.0
