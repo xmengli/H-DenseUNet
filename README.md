@@ -3,4 +3,3 @@ The code for TMI 2018: H-DenseUNet: Hybrid Densely Connected UNet for Liver and 
 http://arxiv.org/pdf/1709.07330.pdf
 
 Coming soon... 
-quickly
