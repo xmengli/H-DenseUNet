@@ -12,24 +12,24 @@ This repository is based on Keras with Tensorflow backbone. Therefore, you need 
 
 
 1. Data preprocessing: 
-   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE)
-   put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/"
-   Then data preprocessing, run:
+   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE). 
+   Then put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/". 
+   run:
    ```shell 
    python preprocessing.py 
    ```
 
 
 2. Test our model:
-   Download liver mask from [GoogleDrive](https://drive.google.com/file/d/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/view?usp=sharing) and put them in folder: 'livermask' 
-   Download model from [GoogleDrive](https://drive.google.com/file/d/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing) and put them in folder: 'model'
+   Download liver mask from [LiverMask](https://drive.google.com/file/d/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/view?usp=sharing) and put them in folder: 'livermask'.
+   Download model from [Model](https://drive.google.com/file/d/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing) and put them in folder: 'model'
    run:
    ```shell
    python test.py
    ```
 
 3. Train 2D DenseUnet:
-    First, you need to download the pretrained model from [GoogleDrive](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in folder 'model'.
+    First, you need to download the pretrained model from [ImageNet Pretrained](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in folder 'model'.
     Then run:
    ```shell
    sh bash_train.sh
