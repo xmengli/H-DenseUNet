@@ -10,8 +10,8 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 
 
 1. Data preprocessing: 
-   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE). \n 
-   Then put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/". \n
+   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE). \\
+   Then put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/". \\
    Run:
    ```shell 
    python preprocessing.py 
