@@ -20,7 +20,7 @@ K.set_image_dim_ordering('tf')
 #  global parameters
 parser = argparse.ArgumentParser(description='Keras 2d denseunet Training')
 #  data folder
-parser.add_argument('-data', type=str, default='/data/', help='test images')
+parser.add_argument('-data', type=str, default='/data/xmli/gpu7_xmli/LiverChallengeData/', help='test images')
 parser.add_argument('-save_path', type=str, default='Experiments/')
 #  other paras
 parser.add_argument('-b', type=int, default=40)

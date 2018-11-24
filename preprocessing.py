@@ -14,10 +14,11 @@ def proprecessing(image_path, save_folder):
         img, img_header = load(image_path+file)
         img[img < -200] = -200
         img[img > 250] = 250
-	img = np.array(img, dtype='float32')
-	print ("Saving image "+file)
         save(img, "./data/" + save_folder + file)
 
+
+
+        
 def generate_livertxt(image_path, save_folder):
     if not os.path.exists("data/"+save_folder):
         os.mkdir("data/"+save_folder)
@@ -75,11 +76,11 @@ def generate_txt(image_path, save_folder):
         np.savetxt('data/myTrainingDataTxt/LiverBox/box_'+str(i)+'.txt', box,fmt='%d')
 
 
-proprecessing(image_path='data/TrainingData/', save_folder='myTrainingData/')
-proprecessing(image_path='data/TestData/', save_folder='myTestData/')
+proprecessing(image_path='data/TrainingData/', save_folder='myTraindata/')
+proprecessing(image_path='data/TestData/', save_folder='myTestdata/')
 print ("Generate liver txt ")
-generate_livertxt(image_path='data/TrainingData/', save_folder='myTrainingDataTxt/')
+generate_livertxt(image_path='/data/xmli/gpu7_xmli/LiverChallengeData/TrainingData/', save_folder='myTrainingDataTxt/')
 print ("Generate tumor txt")
-generate_tumortxt(image_path='data/TrainingData/', save_folder='myTrainingDataTxt/')
+generate_tumortxt(image_path='/data/xmli/gpu7_xmli/LiverChallengeData/TrainingData/', save_folder='myTrainingDataTxt/')
 print ("Generate liver box ")
-generate_txt(image_path='data/TrainingData/', save_folder='myTrainingDataTxt/')
+generate_txt(image_path='/data/xmli/gpu7_xmli/LiverChallengeData/TrainingData/', save_folder='myTrainingDataTxt/')
