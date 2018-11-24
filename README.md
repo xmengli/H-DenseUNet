@@ -32,16 +32,20 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
    ```shell
    sh bash_train.sh
    ```
-4, Train H-DenseUnet: 
-    First, Load your trained 2d model, and run:
-    ```shell 
-    CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model 3dpart 
-    ```    
-    
-    Then, train in end-to-end way, and run: 
-    ```shell
-    CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model end2end
-    ```
+
+4. Train H-DenseUnet:
+    Load your trained model and 
+    Then run:
+   ```shell
+   CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model 3dpart
+   ```
+
+5. Train H-DenseUnet in end-to-end way:
+    Then run:
+   ```shell
+   CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model end2end
+   ```
+
 
 ## Citation
 
