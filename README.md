@@ -10,13 +10,8 @@ This repository is based on Keras with Tensorflow backbone. Therefore, you need 
 
 ### Usage
 
-1. Clone the repository:
 
-   ```shell
-   git clone https://github.com/yulequan/PU-Net.git
-   cd PU-Net
-   ```
-2. Data preprocessing: 
+1. Data preprocessing: 
    Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE)
    put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/"
    Then data preprocessing, run:
@@ -25,7 +20,7 @@ This repository is based on Keras with Tensorflow backbone. Therefore, you need 
    ```
 
 
-3. Test our model:
+2. Test our model:
    Download liver mask from [GoogleDrive](https://drive.google.com/file/d/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/view?usp=sharing) and put them in folder: 'livermask' 
    Download model from [GoogleDrive](https://drive.google.com/file/d/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing) and put them in folder: 'model'
    run:
@@ -33,30 +28,20 @@ This repository is based on Keras with Tensorflow backbone. Therefore, you need 
    python test.py
    ```
 
-4. Train 2D DenseUnet:
+3. Train 2D DenseUnet:
     First, you need to download the pretrained model from [GoogleDrive](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in folder 'model'.
     Then run:
    ```shell
    sh bash_train.sh
    ```
 
-5, Train H-DenseUnet:
+4, Train H-DenseUnet:
 
 	First, Load your trained 2d model. 
 	Then run: 
 	```shell 
 	sh bash_trainhybrid.sh
 	```
-
-### Evaluation code
-We provide the code to calculate the metric NUC in the evaluation code folder. In order to use it, you need to install the CGAL library. Please refer [this link](https://www.cgal.org/download/linux.html) to install this library.
-Then:
-   ```shell
-   cd evaluation_code
-   cmake .
-   make
-   ./evaluation nicolo.off nicolo.xyz
-```
 
 ## Citation
 
