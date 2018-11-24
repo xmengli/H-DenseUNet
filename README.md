@@ -33,13 +33,12 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
    sh bash_train.sh
    ```
 
-4, Train H-DenseUnet:
-
+4, Train H-DenseUnet:  
     First, Load your trained 2d model, and run: 
-  	```shell 
+
+    ```shell 
   	CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model 3dpart 
   	```
-
     End-to-End train H-DenseUnet.  
     run:
     ```shell 
