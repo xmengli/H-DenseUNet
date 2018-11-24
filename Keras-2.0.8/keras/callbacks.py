@@ -25,7 +25,7 @@ if K.backend() == 'tensorflow':
     import tensorflow as tf
     from tensorflow.contrib.tensorboard.plugins import projector
 
-path =  './result_train_dense167_fast_bauto3d_residualconv_endtoend_big/'
+path =  './Experiments/'
 class CallbackList(object):
     """Container abstracting a list of callbacks.
 
