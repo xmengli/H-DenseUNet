@@ -5,16 +5,14 @@ by [Xiaomeng Li](https://scholar.google.com/citations?user=uVTzPpoAAAAJ&hl=en), 
 
 This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connected UNet for Liver and Tumor Segmentation from CT Volumes](http://arxiv.org/pdf/1709.07330.pdf)'.
 
-### Installation
-This repository is based on Keras with Tensorflow backbone. Therefore, you need to install tensorflow. 
 
 ### Usage
 
 
 1. Data preprocessing: 
-   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE). 
-   Then put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/". 
-   run:
+   Download dataset from: [Liver Tumor Segmentation Challenge](https://drive.google.com/drive/folders/0B0vscETPGI1-Q1h1WFdEM2FHSUE). \n 
+   Then put 131 training data with segmentation masks under "data/TrainingData/" and 70 test data under "data/TestData/". \n
+   Run:
    ```shell 
    python preprocessing.py 
    ```
