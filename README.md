@@ -19,15 +19,15 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 
 
 2. Test our model:
-   Download liver mask from [LiverMask](https://drive.google.com/file/d/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/view?usp=sharing) and put them in folder: 'livermask'.   
-   Download model from [Model](https://drive.google.com/file/d/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing) and put them in folder: 'model'.   
+   Download liver mask from [LiverMask](https://drive.google.com/file/d/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/view?usp=sharing) and put them in the folder: 'livermask'.   
+   Download model from [Model](https://drive.google.com/file/d/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing) and put them in the folder: 'model'.   
    run:
    ```shell
    python test.py
    ```
 
 3. Train 2D DenseUnet:
-    First, you need to download the pretrained model from [ImageNet Pretrained](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in folder 'model'.
+    First, you need to download the pretrained model from [ImageNet Pretrained](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in the folder 'model'.
     Then run:
    ```shell
    sh bash_train.sh
@@ -36,10 +36,16 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 4, Train H-DenseUnet:
 
 	First, Load your trained 2d model. 
-	Then run: 
+	and run: 
 	```shell 
-	sh bash_trainhybrid.sh
+	CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model 3dpart 
 	```
+
+  End-to-End train H-DenseUnet.  
+  run:
+  ```shell 
+  CUDA_VISIBLE_DEVICES='0' python train_hybrid.py -model end2end
+  ```
 
 ## Citation
 

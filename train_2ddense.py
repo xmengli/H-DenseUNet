@@ -20,7 +20,7 @@ K.set_image_dim_ordering('tf')
 #  global parameters
 parser = argparse.ArgumentParser(description='Keras 2d denseunet Training')
 #  data folder
-parser.add_argument('-data', type=str, default='/data/xmli/gpu7_xmli/LiverChallengeData/', help='test images')
+parser.add_argument('-data', type=str, default='data/', help='test images')
 parser.add_argument('-save_path', type=str, default='Experiments/')
 #  other paras
 parser.add_argument('-b', type=int, default=40)
@@ -128,7 +128,6 @@ def generate_arrays_from_file(batch_size, trainidx, img_list, tumor_list, tumorl
 
 def load_fast_files(args):
 
-
     trainidx = list(range(131))
     img_list = []
     tumor_list = []
@@ -200,8 +199,8 @@ def train_and_predict():
         if os.path.exists(args.save_path + "/history/lossepoch.txt"):
             os.remove(args.save_path + '/history/lossepoch.txt')
 
-    model_checkpoint = ModelCheckpoint(args.save_path + 'model/weights.{epoch:02d}-{loss:.2f}.hdf5', monitor='loss', verbose = 1,
-                                       save_best_only=False,save_weights_only=False,mode = 'min', period = 2)
+    model_checkpoint = ModelCheckpoint(args.save_path + '/model/weights.{epoch:02d}-{loss:.2f}.hdf5', monitor='loss', verbose = 1,
+                                       save_best_only=False,save_weights_only=False,mode = 'min', period = 1)
 
     steps = 27386/args.b
     model.fit_generator(generate_arrays_from_file(args.b, trainidx, img_list, tumor_list, tumorlines, liverlines, tumoridx,
