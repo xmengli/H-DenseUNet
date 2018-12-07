@@ -149,26 +149,21 @@ def DenseNet3D(img_input, nb_dense_block=4, growth_rate=32, nb_filter=96, reduct
     box.append(x)
 
     up0 = UpSampling3D(size=(2, 2, 1))(x)
-    # line0 = Conv3D(504, (1, 1, 1), padding="same", name="3dline0")(box[3])
-    # up0_sum = add([line0, up0])
     conv_up0 = Conv3D(504, (3, 3, 3), padding="same", name="3dconv_up0")(up0)
     bn_up0 = BatchNormalization(name="3dbn_up0")(conv_up0)
     ac_up0 = Activation('relu', name='3dac_up0')(bn_up0)
 
     up1 = UpSampling3D(size=(2, 2, 1))(ac_up0)
-    # up1_sum = add([box[2], up1])
     conv_up1 = Conv3D(224, (3, 3, 3), padding="same", name="3dconv_up1")(up1)
     bn_up1 = BatchNormalization(name="3dbn_up1")(conv_up1)
     ac_up1 = Activation('relu', name='3dac_up1')(bn_up1)
 
     up2 = UpSampling3D(size=(2, 2, 1))(ac_up1)
-    # up2_sum = add([box[1], up2])
     conv_up2 = Conv3D(192, (3, 3, 3), padding="same", name="3dconv_up2")(up2)
     bn_up2 = BatchNormalization(name="3dbn_up2")(conv_up2)
     ac_up2 = Activation('relu', name='3dac_up2')(bn_up2)
 
     up3 = UpSampling3D(size=(2, 2, 2))(ac_up2)
-    # up3_sum = add([box[0], up3])
     conv_up3 = Conv3D(96, (3, 3, 3), padding="same", name="3dconv_up3")(up3)
     bn_up3 = BatchNormalization(name="3dbn_up3")(conv_up3)
     ac_up3 = Activation('relu', name='3dac_up3')(bn_up3)

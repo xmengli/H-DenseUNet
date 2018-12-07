@@ -185,7 +185,6 @@ def train_and_predict(args):
         liveridx.append(len(liverline))
         f2.close()
 
-
     if not os.path.exists(args.save_path + "/H_model"):
         os.mkdir(args.save_path + '/H_model')
     if not os.path.exists(args.save_path + "/history"):
