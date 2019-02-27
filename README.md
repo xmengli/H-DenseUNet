@@ -19,15 +19,15 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 
 
 2. Test our model:
-   Download liver mask from [LiverMask](https://drive.google.com/file/sd/14DFUoX877dWjaiau_5c5aI3j4JYxdEMm/21viewview?usp=sharing) and put them in the folder: 'livermask'.   
-   Download model from [Model](https://drive.google.com/file/sd/1sZgqnqjF_M3Bv_9M2kkfPZyPTrIoVttB/view?usp=sharing121) and put them in the folder: 'model'.
+   Download liver mask from [LiverMask](https://drive.google.com/file/d/14HxHiOKcJtpbOOvPqx-4XN7_Jrdy1Fby/view?usp=sharing) and put them in the folder: 'livermask'.   
+   Download model from [Model](https://drive.google.com/file/d/12w5gPQE2-IbTqPaK04RIXmJXmjEvyocw/view?usp=sharing) and put them in the folder: 'model'.
    run:
    ```shell
    python test.py
    ```
 
 3. Train 2D DenseUnet:
-    First, you need to download the pretrained model from [ImageNet Pretrained](https://drive.google.com/file/d/195LqUBwueXqhmRcznK20S7AK6NtGEHBM/view?usp=sharing), extract it and put it in the folder 'model'.
+    First, you need to download the pretrained model from [ImageNet Pretrained](https://drive.google.com/file/d/1HHiPBKPw539LR0Oj5g1gD3FNRkCsxeGi/view?usp=sharing), extract it and put it in the folder 'model'.
     Then run:
    ```shell
    sh bash_train.sh
