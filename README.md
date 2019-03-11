@@ -20,7 +20,7 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 
 2. Test our model:
    Download liver mask from [LiverMask](https://drive.google.com/file/d/14HxHiOKcJtpbOOvPqx-4XN7_Jrdy1Fby/view?usp=sharing) and put them in the folder: 'livermask'.   
-   Download model from [Model](https://drive.google.com/file/d/12w5gPQE2-IbTqPaK04RIXmJXmjEvyocw/view?usp=sharing) and put them in the folder: 'model'.
+   Download model from [Model](https://drive.google.com/file/d/1Qo4TFR4hf5wVPJSkMqGMEf4O4GjRHRyU/view?usp=sharing) and put them in the folder: 'model'.
    run:
    ```shell
    python test.py
