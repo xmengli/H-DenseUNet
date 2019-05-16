@@ -51,10 +51,8 @@ This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connecte
 
 If H-DenseUNet is useful for your research, please consider citing:
 
-<<<<<<< HEAD
 =======
   ```shell
->>>>>>> 4c9810652b23745072f5376aa56177b0c0ad2bea
   @article{li2018h,
   title={H-denseunet: Hybrid densely connected unet for liver and tumor segmentation from ct volumes},
   author={Li, Xiaomeng and Chen, Hao and Qi, Xiaojuan and Dou, Qi and Fu, Chi-Wing and Heng, Pheng-Ann},
@@ -65,7 +63,6 @@ If H-DenseUNet is useful for your research, please consider citing:
   year={2018},
   publisher={IEEE}
   }
-<<<<<<< HEAD
 =======
 
   ```
