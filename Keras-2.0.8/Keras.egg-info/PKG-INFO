@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: Keras
+Version: 2.0.8
+Summary: Deep Learning for Python
+Home-page: https://github.com/fchollet/keras
+Author: Francois Chollet
+Author-email: francois.chollet@gmail.com
+License: MIT
+Download-URL: https://github.com/fchollet/keras/tarball/2.0.8
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
