@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a8312984-cb63-4522-9231-d6637203f4e2" name="gpu5.cse.cuhk.edu.hk" url="http://gpu5.cse.cuhk.edu.hk">
+        <fileTransfer host="gpu5.cse.cuhk.edu.hk" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
