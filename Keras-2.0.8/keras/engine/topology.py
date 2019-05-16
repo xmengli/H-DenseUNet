@@ -3062,6 +3062,7 @@ def load_weights_from_hdf5_group(f, layers):
             filtered_layers.append(layer)
 
     layer_names = [n.decode('utf8') for n in f.attrs['layer_names']]
+
     filtered_layer_names = []
     for name in layer_names:
         g = f[name]
@@ -3270,11 +3271,11 @@ def load_weights_from_hdf5_group_by_name_mulgpu_twomodelcombine(f, layers, flag)
     else:
         original_backend = None
     # New file format.
-    # layer_names = [n.decode('utf8') for n in f.attrs['layer_names']]
+    layer_names = [n.decode('utf8') for n in f.attrs['layer_names']]
     if flag:
-        f = f['3dauto_context']
-    else:
         f = f['denseu161']
+    else:
+        f = f['auto3d_residual_conv']
     layer_names = [n.decode('utf8') for n in f.keys()]
 
     # layer_names = [n.decode('utf8') for n in f.attrs['layer_names']]

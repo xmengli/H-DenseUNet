@@ -15,6 +15,8 @@ import time
 from loss import weighted_crossentropy
 from skimage.transform import resize
 import argparse
+import os
+
 K.set_image_dim_ordering('tf')
 
 #  global parameters
@@ -27,7 +29,7 @@ parser.add_argument('-b', type=int, default=1)
 parser.add_argument('-input_size', type=int, default=224)
 parser.add_argument('-model_weight', type=str, default='./model/model_best.hdf5')
 parser.add_argument('-input_cols', type=int, default=8)
-parser.add_argument('-mode', type=str, default='')
+parser.add_argument('-arch', type=str, default='')
 
 #  data augment
 parser.add_argument('-mean', type=int, default=48)
@@ -135,13 +137,19 @@ def train_and_predict(args):
     print('-'*30)
     print('Creating and compiling model...')
     print('-'*30)
-    model = {'3dpart': denseunet_3d(args),
-             'end2end': dense_rnn_net(args)}[args.mode]
-    
-    sgd = SGD(lr=1e-3, momentum=0.9, nesterov=True)
-    model.compile(optimizer=sgd, loss=[weighted_crossentropy])
-    model.load_weights(args.model_weight)
-    print (model.summary())
+
+    if args.arch == "3dpart":
+        model = denseunet_3d(args)
+        model_path = "/3dpart_model"
+        sgd = SGD(lr=1e-3, momentum=0.9, nesterov=True)
+        model.compile(optimizer=sgd, loss=[weighted_crossentropy])
+        model.load_weights(args.model_weight, by_name=True, by_gpu=True, two_model=True, by_flag=True)
+    else:
+        model = dense_rnn_net(args)
+        model_path = "/hybrid_model"
+        sgd = SGD(lr=1e-3, momentum=0.9, nesterov=True)
+        model.compile(optimizer=sgd, loss=[weighted_crossentropy])
+        model.load_weights(args.model_weight)
 
     #  liver tumor LITS
     trainidx = list(range(131))
@@ -185,8 +193,8 @@ def train_and_predict(args):
         liveridx.append(len(liverline))
         f2.close()
 
-    if not os.path.exists(args.save_path + "/H_model"):
-        os.mkdir(args.save_path + '/H_model')
+    if not os.path.exists(args.save_path +model_path):
+        os.mkdir(args.save_path + model_path)
     if not os.path.exists(args.save_path + "/history"):
         os.mkdir(args.save_path + '/history')
     else:
@@ -194,12 +202,12 @@ def train_and_predict(args):
             os.remove(args.save_path + '/history/lossbatch.txt')
         if os.path.exists(args.save_path + "/history/lossepoch.txt"):
             os.remove(args.save_path + '/history/lossepoch.txt')
-    model_checkpoint = ModelCheckpoint(args.save_path + '/H_model/weights.{epoch:02d}-{loss:.2f}.hdf5', monitor='loss', verbose = 1,
+    model_checkpoint = ModelCheckpoint(args.save_path + model_path+'/weights.{epoch:02d}-{loss:.2f}.hdf5', monitor='loss', verbose = 1,
                                        save_best_only=False,save_weights_only=False,mode = 'min', period = 1)
     print('-'*30)
     print('Fitting model......')
     print('-'*30)
-    steps = 27386/(args.b*6)
+    steps = 27386 / (args.b * 6)
     model.fit_generator(generate_arrays_from_file(args.b, trainidx, img_list, tumor_list, tumorlines, liverlines,
                                                   tumoridx, liveridx, minindex_list, maxindex_list),
                         steps_per_epoch=steps,

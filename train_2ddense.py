@@ -139,7 +139,7 @@ def load_fast_files(args):
     liverlines = []
     for idx in xrange(131):
         img, img_header = load(args.data+ '/myTrainingData/volume-' + str(idx) + '.nii')
-        tumor, tumor_header = load(args.data + '/TrainingData/segmentation-' + str(idx) + '.nii')
+        tumor, tumor_header = load(args.data + '/myTrainingData/segmentation-' + str(idx) + '.nii')
         img_list.append(img)
         tumor_list.append(tumor)
 
@@ -177,7 +177,7 @@ def train_and_predict():
 
     model = DenseUNet(reduction=0.5, args=args)
     model.load_weights(args.model_weight, by_name=True)
-    model = make_parallel(model, args.b/10, mini_batch=10)
+    model = make_parallel(model, args.b / 10, mini_batch=10)
     sgd = SGD(lr=1e-3, momentum=0.9, nesterov=True)
     model.compile(optimizer=sgd, loss=[weighted_crossentropy_2ddense])
 
@@ -202,7 +202,8 @@ def train_and_predict():
     model_checkpoint = ModelCheckpoint(args.save_path + '/model/weights.{epoch:02d}-{loss:.2f}.hdf5', monitor='loss', verbose = 1,
                                        save_best_only=False,save_weights_only=False,mode = 'min', period = 1)
 
-    steps = 27386/args.b
+
+    steps = 27386 / args.b
     model.fit_generator(generate_arrays_from_file(args.b, trainidx, img_list, tumor_list, tumorlines, liverlines, tumoridx,
                                                   liveridx, minindex_list, maxindex_list),steps_per_epoch=steps,
                                                     epochs= 6000, verbose = 1, callbacks = [model_checkpoint], max_queue_size=10,
