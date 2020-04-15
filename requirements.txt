@@ -83,5 +83,5 @@ urllib3==1.22
 visdom==0.1.8.3
 webencodings==0.5
 websocket-client==0.48.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 zict==0.1.3
