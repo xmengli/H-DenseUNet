@@ -5,6 +5,9 @@ by [Xiaomeng Li](https://scholar.google.com/citations?user=uVTzPpoAAAAJ&hl=en), 
 
 This repository is for our TMI 2018 paper '[H-DenseUNet: Hybrid Densely Connected UNet for Liver and Tumor Segmentation from CT Volumes](http://arxiv.org/pdf/1709.07330.pdf)'.
 
+### Environment:
+	This code is only tested under python2. Check code environment "requirements.txt"
+
 
 ### Usage
 
