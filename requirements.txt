@@ -79,7 +79,7 @@ tornado==5.0.2
 tqdm==4.28.1
 traceback2==1.4.0
 unittest2==1.1.0
-urllib3==1.22
+urllib3==1.24.2
 visdom==0.1.8.3
 webencodings==0.5
 websocket-client==0.48.0
