@@ -39,7 +39,7 @@ mock==2.0.0
 msgpack-python==0.5.6
 networkx==2.1
 nibabel==2.3.1
-nltk==2.0.4
+nltk==3.4.5
 numpy==1.14.3
 olefile==0.45.1
 packaging==17.1
