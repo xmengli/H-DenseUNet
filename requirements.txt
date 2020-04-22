@@ -50,7 +50,7 @@ pathlib==1.0.1
 pbr==4.0.2
 Pillow==5.0.0
 protobuf==3.5.2
-psutil==5.4.5
+psutil==5.6.6
 pycparser==2.18
 pydicom==1.2.1
 pyparsing==2.2.0
