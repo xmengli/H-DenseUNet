@@ -2,7 +2,7 @@ absl-py==0.1.10
 backports-abc==0.5
 backports.functools-lru-cache==1.5
 backports.weakref==1.0rc1
-bleach==1.5.0
+bleach==3.3.0
 bokeh==0.12.15
 certifi==2018.1.18
 cffi==1.11.5
