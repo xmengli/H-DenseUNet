@@ -11,7 +11,7 @@ click==6.7
 cloudpickle==0.5.2
 cycler==0.10.0
 cytoolz==0.9.0.1
-dask==0.17.2
+dask==2021.10.0
 decorator==4.3.0
 distributed==1.21.6
 dominate==2.3.1
