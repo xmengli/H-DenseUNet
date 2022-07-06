@@ -22,7 +22,7 @@ functools32==3.2.3.post2
 futures==3.2.0
 h5py==2.8.0
 heapdict==1.0.0
-html5lib==0.9999999
+html5lib==0.999999999
 idna==2.6
 imageio==2.3.0
 Jinja2==2.10
